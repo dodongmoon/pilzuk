@@ -2,6 +2,10 @@
 
 따뜻한 종이 질감과 명조체로 구성한 필적확인 문구 뽑기 웹사이트입니다. 별도 설치 과정 없이 정적 파일만으로 동작합니다.
 
+사이트: https://dodongmoon.github.io/pilzuk/
+
+저장소: https://github.com/dodongmoon/pilzuk
+
 ## 로컬 실행
 
 ```sh
@@ -22,7 +26,7 @@ http://127.0.0.1:4173 에서 확인합니다. `npm test`로 데이터 무결성,
 
 ## 데이터
 
-`dist/quotes.json`이 원본 데이터입니다. `year`/`month`는 실제 시행 연월이고 `nominalMonth`는 시험명상의 월입니다. `academicYear`는 수능·평가원 시험의 대입 학년도이며 학력평가에서는 학교 학년도입니다. 예시문항은 실제 시행 시험과 구분합니다.
+`docs/quotes.json`이 원본 데이터입니다. `year`/`month`는 실제 시행 연월이고 `nominalMonth`는 시험명상의 월입니다. `academicYear`는 수능·평가원 시험의 대입 학년도이며 학력평가에서는 학교 학년도입니다. 예시문항은 실제 시행 시험과 구분합니다.
 
 2026-11-09에 조사했으며 2026년 본수능(2027학년도)은 미공개이므로 제외했습니다. 전체 기록을 공식 시험지로 개별 검증한 자료는 아닙니다. `sourceStatus`: `listed`는 원문 목록에 출전이 기재된 경우, `estimated`는 출전 추정, `unknown`은 출전 미상입니다. 상세 근거는 `DATA-SOURCES.txt`를 참조하세요.
 
@@ -30,4 +34,13 @@ http://127.0.0.1:4173 에서 확인합니다. `npm test`로 데이터 무결성,
 
 ## 배포
 
-`dist/` 전체를 정적 호스팅에 올리면 됩니다. `.openai/hosting.json`에는 Sites 프로젝트 정보가 들어 있습니다. 폰트는 Google Fonts의 Gowun Batang과 Noto Sans KR을 사용하며 네트워크 불가 시 시스템 폰트로 표시됩니다.
+GitHub Pages는 `main` 브랜치의 `/docs` 폴더를 자동으로 배포합니다. `docs/` 안의 사이트 파일을 수정하고 `main`에 push하면 공개 사이트에 반영됩니다. 별도 GitHub Actions 워크플로 권한이나 빌드 설치는 필요하지 않습니다.
+
+```sh
+npm test
+git add .
+git commit -m "Update website"
+git push
+```
+
+`docs/` 전체를 다른 정적 호스팅에 올려도 동작합니다. 사이트는 `/pilzuk/` 같은 하위 경로를 지원합니다. 폰트는 Google Fonts의 Gowun Batang과 Noto Sans KR을 사용하며 네트워크 불가 시 시스템 폰트로 표시됩니다.

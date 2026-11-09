@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { uniquePhrases, makeBag, filterRecords, examLabel, sourceLabel } from '../dist/core.js';
-const records = JSON.parse(await readFile(new URL('../dist/quotes.json', import.meta.url), 'utf8'));
+import { uniquePhrases, makeBag, filterRecords, examLabel, sourceLabel } from '../docs/core.js';
+const records = JSON.parse(await readFile(new URL('../docs/quotes.json', import.meta.url), 'utf8'));
 
 test('the complete available list has unique IDs, attribution, and all 22 years', () => {
   assert.equal(records.length, 217);
