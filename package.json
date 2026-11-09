@@ -1,0 +1,8 @@
+{
+  "name": "pilzuk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "필적 — 오늘의 한 문장",
+  "scripts": { "dev": "node server.mjs", "start": "node server.mjs", "test": "node --test tests/*.test.mjs" }
+}
