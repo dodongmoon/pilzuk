@@ -101,6 +101,8 @@ blockquote { font-family: var(--serif); font-weight: 400; font-size: clamp(24px,
 .text-button:hover { color: var(--red); }
 .action-divider { height: 11px; width: 1px; background: var(--rule); }
 .draw-count { font-size: 10px; color: var(--faint); margin: 10px 0 0; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.closing-quote { max-width: 700px; margin: 0 auto 36px; padding-inline: 24px; text-align: center; font-family: var(--serif); font-size: 14px; line-height: 1.9; color: var(--muted); word-break: keep-all; text-wrap: balance; }
+.closing-quote span { display: inline-block; margin-inline-start: 6px; font-size: 12px; white-space: nowrap; }
 .site-footer { border-top: 3px double var(--rule); max-width: 1232px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 20px 0 25px; font-size: 10px; color: var(--faint); }
 .site-footer > div { display: flex; align-items: center; gap: 18px; }
 .footer-brand { font-family: var(--serif); font-size: 18px; color: var(--muted); }
@@ -190,7 +192,7 @@ dialog { border: 4px double #a9997c; }
   .toast { transform: none; }
 }
 @media print {
-  .site-header, .intro, .draw-controls, .site-footer, .vertical-note, .side-number, .save-quote { display: none; }
+  .site-header, .intro, .draw-controls, .closing-quote, .site-footer, .vertical-note, .side-number, .save-quote { display: none; }
   .draw-space { max-width: none; padding: 30px; }
   .quote-card { box-shadow: none; }
   body::before { display: none; }
